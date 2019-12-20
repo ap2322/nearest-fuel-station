@@ -1,0 +1,18 @@
+<h1>Search Results</h1>
+
+<h3>Closest Fuel Station</h3>
+
+<% if station %>
+   <section class="fuel-station">
+     <ul>
+       <li id="station-name">
+         <%= station.name %>
+       </li>
+        <ul>
+          <li id='station-address'><%= station.address %></li>
+          <li id='station-fuel-type'><%= station.fuel_type %></li>
+          <li id='station-access-times'><%= station.access_times %></li>
+        </ul>
+     </ul>
+   </section>
+<% end %>
