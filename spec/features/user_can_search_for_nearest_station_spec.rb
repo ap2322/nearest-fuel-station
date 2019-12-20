@@ -27,10 +27,10 @@ describe 'As a user searching for the nearest fuel station' do
       expect(page).to have_content("Closest Fuel Station")
 
       within(".fuel-station") do
-        expect(page).to have_css('.station-name')
-        expect(page).to have_css('.station-address')
-        expect(page).to have_css('.station-fuel-type')
-        expect(page).to have_css('.station-access-times')
+        expect(page).to have_css('#station-name')
+        expect(page).to have_css('#station-address')
+        expect(page).to have_css('#station-fuel-type')
+        expect(page).to have_css('#station-access-times')
       end
     end
   end
