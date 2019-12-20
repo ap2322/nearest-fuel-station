@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    closest_station = FindStation.new(params[:location])
-    render locals: {station: closest_station}
+    station = FindStation.new(params[:location])
+    render locals: {station: station.fetch_nearest_station}
   end
 end
