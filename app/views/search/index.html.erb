@@ -12,8 +12,14 @@
           <li id='station-address'><%= station.address %></li>
           <li id='station-fuel-type'><%= station.fuel_type %></li>
           <li id='station-access-times'><%= station.access_times %></li>
-          <li id='station-distance'><%= station.distance %></li>
         </ul>
+        <% if station.travel_info %>
+          <ul class="travel-info">
+            <li id='distance'><%= station.distance %></li>
+            <li id='travel-time'><%= station.travel_time %></li>
+            <li id='directions'><%= station.directions %></li>
+          </ul>
+        <% end %>
      </ul>
    </section>
 <% end %>
