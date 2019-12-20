@@ -33,5 +33,20 @@ describe 'As a user searching for the nearest fuel station' do
         expect(page).to have_css('#station-access-times')
       end
     end
+
+    scenario 'i see travel info to the nearest station' do
+      visit '/'
+      select "Turing", :from => :location
+      click_on "Find Nearest Station"
+
+      expect(current_path).to eq("/search")
+      expect(page).to have_content("Closest Fuel Station")
+
+      within(".travel-info") do
+        expect(page).to have_css('#distance')
+        expect(page).to have_css('#travel-time')
+        expect(page).to have_css('#directions')
+      end
+    end
   end
 end
