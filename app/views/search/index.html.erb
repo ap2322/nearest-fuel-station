@@ -2,22 +2,26 @@
 
 <h3>Closest Fuel Station</h3>
 
-<% if station %>
+<% if station.nearest_station %>
    <section class="fuel-station">
      <ul>
        <li id="station-name">
-         <%= station.name %>
+         <%= station.nearest_station.name %>
        </li>
         <ul>
-          <li id='station-address'><%= station.address %></li>
-          <li id='station-fuel-type'><%= station.fuel_type %></li>
-          <li id='station-access-times'><%= station.access_times %></li>
+          <li id='station-address'><%= station.nearest_station.address %></li>
+          <li id='station-fuel-type'><%= station.nearest_station.fuel_type %></li>
+          <li id='station-access-times'><%= station.nearest_station.access_times %></li>
         </ul>
-        <% if station.travel_info %>
+        <% if station.route %>
           <ul class="travel-info">
-            <li id='distance'><%= station.distance %></li>
-            <li id='travel-time'><%= station.travel_time %></li>
-            <li id='directions'><%= station.directions %></li>
+            <li id='distance'><%= station.route.distance %></li>
+            <li id='travel-time'><%= station.route.travel_time %></li>
+            <% station.route.directions.each do |step| %>
+              <ul id='directions'>
+                <li id='directions'><%= step %></li>
+              </ul>
+            <% end %>
           </ul>
         <% end %>
      </ul>
